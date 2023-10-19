@@ -1,0 +1,187 @@
+@use 'normalize.css/normalize.css';
+@import './libs';
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+a {
+    color: #278AFF;
+}
+
+body {
+    font-family: sans-serif;
+    min-width: 320px;
+}
+
+.container {
+    max-width: 1110px;
+    margin: auto;
+}
+
+.header {
+    background: #F8F6F7;
+    overflow: hidden;
+}
+
+.header .container {
+    position: relative;
+    padding: 30px 0 130px;
+}
+
+.header__top {
+    margin-bottom: 120px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a.logo {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navigation__list {
+    display: flex;
+    list-style: none;
+}
+
+.navigation__item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.phone-info {
+    text-align: right;
+}
+
+.square {
+    width: 200px;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    background-color: #ccc;
+    position: fixed;
+    transition: .3s right;
+}
+
+.square.opened {
+    right: 0;
+}
+
+.header__top,
+.header__hero {
+    z-index: 1;
+    position: relative;
+}
+
+.header__girl {
+    position: absolute;
+    bottom: 0;
+    right: 60px;
+    z-index: 0;
+}
+
+.header__girl:hover:before {
+    transform: scale(1.05);
+}
+
+.header__girl:before {
+    content: '';
+    width: 472px;
+    height: 472px;
+    border-radius: 50%;
+    background-color: #FB9475;
+    position: absolute;
+    bottom: -110px;
+    right: 0;
+    transition: .3s transform;
+}
+
+.header__girl img {
+    display: block;
+    position: relative;
+}
+
+.first,
+.last {
+    height: 100px;
+}
+
+.first {
+    background-color: green;
+    margin-bottom: 50px;
+}
+
+.last {
+    background-color: gray;
+    padding-top: 50px;
+}
+
+.adaptive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.tabs { 
+    &__links { 
+      .active { 
+        color: red; 
+      } 
+    } 
+     
+    &__item { 
+      display: none; 
+       
+      &.active { 
+        display: block; 
+      } 
+    } 
+  }
+
+/* Large Devices, Wide Screens */ 
+@media only screen and (max-width: 1280px) { 
+} 
+/* Medium Devices, Desktops */ 
+@media only screen and (max-width: 992px) { 
+    .header__girl {
+        opacity: 0.4;
+    }
+
+    .header__hero {
+        text-align: center;
+    }
+} 
+/* Small Devices, Tablets */ 
+@media only screen and (max-width: 768px) {
+    .header__top {
+        flex-direction: column;
+    }
+} 
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width: 480px) { 
+    .header .container {
+        padding-bottom: 60px;
+    }
+
+    .header__top {
+        margin-bottom: 60px;
+    }
+
+    .header__navigation {
+        display: none;
+    }
+
+    .header__girl {
+        display: none;
+    }
+} 
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width: 320px) { 
+}
