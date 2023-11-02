@@ -1,4 +1,4 @@
-const TerserPlugin = require('terser-webpack-plugin');ё
+const TerserPlugin = require('terser-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV == 'production';
 
